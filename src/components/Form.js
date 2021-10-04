@@ -7,6 +7,14 @@ const Form = () => {
     const mylist = useSelector((event) => event.todoReducer)
     const dispatch = useDispatch();
     console.log(mylist)
+
+    const handleUpdate = (index) => {
+        const updateData = prompt("enter list", mylist[index]);
+        dispatch(updateTodo(updateData, index))
+
+
+    }
+
     return (
 
         <div>
@@ -23,11 +31,11 @@ const Form = () => {
             </div>
             <div>
                 {
-                    mylist && mylist.map((data) => {
-                        return (<div key={data}>
+                    mylist && mylist.map((data, index) => {
+                        return (<div key={index}>
                             <h1>{data}</h1>
                             <button onClick={() => dispatch(deleteTodo(data), setData(''))}>DELETE</button>&nbsp;
-                            <button onClick={() => dispatch(updateTodo(data), setData(''))}>UPDATE</button>&nbsp;
+                            <button onClick={() => handleUpdate(index)}>UPDATE</button>&nbsp;
                         </div>)
                     })
 

@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Form from "./components/Form"
 
 function App() {
-  return(
+  return (
     <div>
-    <h2>TODO LIST</h2><Form/>
+      <h2>TODO LIST</h2><Form />
     </div>
   )
 }

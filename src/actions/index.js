@@ -1,6 +1,6 @@
 export const addTodo = (text) => {
     console.log(text)
-    return{
+    return {
         type: "ADD_TODO",
         payload: text
         // payload: {
@@ -11,14 +11,16 @@ export const addTodo = (text) => {
         // }
     }
 }
-export const updateTodo = () => {
-    return{
-        type: "UPDATE_TODO"
+export const updateTodo = (data, index) => {
+    console.log('update', data, index)
+    return {
+        type: "UPDATE_TODO",
+        payload: { data, index }
     }
 }
 export const deleteTodo = (data) => {
     console.log(data)
-    return{
+    return {
         type: "DELETE_TODO",
         payload: data
     }
